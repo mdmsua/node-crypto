@@ -1,0 +1,30 @@
+{
+  "name": "node-crypto",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.4.8",
+    "socket.io": "~0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdmsua/node-crypto.git"
+  },
+  "keywords": [
+    "nodejs",
+    "crypto",
+    "hash"
+  ],
+  "author": "Dmytro Morozov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdmsua/node-crypto/issues"
+  },
+  "homepage": "https://github.com/mdmsua/node-crypto"
+}

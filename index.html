@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>node crypto</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<input class="form-control col-lg-12 input-lg" type="text" id="message">
+		</div>
+		<div class="row">
+			<div class="page-header">
+				<h1>SHA-1</h1>
+			</div>
+			<p id="sha1"></p>
+		</div>
+		<div class="row">
+			<div class="page-header">
+				<h1>SHA-256</h1>
+			</div>
+			<p id="sha256"></p>
+		</div>
+		<div class="row">
+			<div class="page-header">
+				<h1>SHA-512</h1>
+			</div>
+			<p id="sha512"></p>
+		</div>
+		<div class="row">
+			<div class="page-header">
+				<h1>MD5</h1>
+			</div>
+			<p id="md5"></p>
+		</div>
+	</div>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var socket = io.connect('http://localhost');
+		var sha1 = document.getElementById('sha1');
+		var sha256 = document.getElementById('sha256');
+		var sha512 = document.getElementById('sha512');
+		var md5 = document.getElementById('md5');
+		socket.on('sha1', function(data) {
+			sha1.innerHTML = data.enc;
+		});
+		socket.on('sha256', function(data) {
+			sha256.innerHTML = data.enc;
+		});
+		socket.on('sha512', function(data) {
+			sha512.innerHTML = data.enc;
+		});
+		socket.on('md5', function(data) {
+			md5.innerHTML = data.enc;
+		});
+		document.getElementById('message').addEventListener('keyup', function(event) {
+			socket.emit('message', { msg: event.target.value });
+		});
+	</script>
+</body>
+</html>
