@@ -37,7 +37,7 @@
 	</div>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript">
-		var socket = io.connect(location.href);
+		var socket = io.connect('http://localhost');
 		var sha1 = document.getElementById('sha1');
 		var sha256 = document.getElementById('sha256');
 		var sha512 = document.getElementById('sha512');
