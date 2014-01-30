@@ -35,7 +35,6 @@
 			<p>{{md5}}</p>
 		</div>
 	</div>
-<<<<<<< HEAD
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
 	<script>
@@ -57,29 +56,6 @@
 				if (text)
 					socket.emit('message', { msg: text });
 			});
-=======
-	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript">
-		var socket = io.connect(location.href);
-		var sha1 = document.getElementById('sha1');
-		var sha256 = document.getElementById('sha256');
-		var sha512 = document.getElementById('sha512');
-		var md5 = document.getElementById('md5');
-		socket.on('sha1', function(data) {
-			sha1.innerHTML = data.enc;
-		});
-		socket.on('sha256', function(data) {
-			sha256.innerHTML = data.enc;
-		});
-		socket.on('sha512', function(data) {
-			sha512.innerHTML = data.enc;
-		});
-		socket.on('md5', function(data) {
-			md5.innerHTML = data.enc;
-		});
-		document.getElementById('message').addEventListener('keyup', function(event) {
-			socket.emit('message', { msg: event.target.value });
->>>>>>> 94ea7b00332efd9bb8a702a78945e49c89f7e311
 		});
 	</script>
 </body>
